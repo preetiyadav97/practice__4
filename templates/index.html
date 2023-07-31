@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th:nth-child(even),td:nth-child(even) {
+  background-color: #D6EEEE;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+
+</style>
+</head>
+<body>
+
+
+
+<table style="width:100%">
+  <tr>
+    <th>Course Name</th>
+    <th>Course Code</th>
+    <th>Collage Name</th>
+    <th>Total student</th>
+    <th>Delete</th>
+    <th>Update</th>
+
+   
+  </tr>
+  {% for i in show %}
+  <tr>
+    <td>{{i.Coursename}}</td>
+    <td>{{i.Code}}</td>
+    <td>{{i.Collage}}</td>
+    <td>{{i.Student}}</td>
+    <td><button class="button button1">Delete</button></td>
+    <td><button class="button button2">Update</button></td>
+
+
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
