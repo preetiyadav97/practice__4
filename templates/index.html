@@ -49,14 +49,16 @@ th:nth-child(even),td:nth-child(even) {
     <td>{{i.Code}}</td>
     <td>{{i.Collage}}</td>
     <td>{{i.Student}}</td>
-    <td><button class="button button1">Delete</button></td>
-    <td><button class="button button2">Update</button></td>
+    <td><button class="button button1"><a href="http://127.0.0.1:8000/index/delete/{{i.id}}/">Delete</a></button></td>
+    <td><button class="button button2"><a href="http://127.0.0.1:8000/index/update/{{i.id}}/">Update</a></button></td>
 
 
   </tr>
   {% endfor %}
 
 </table>
+
+<button  class="button button1"><a href="http://127.0.0.1:8000/index/Create/">Create</a></button>
 
 </body>
 </html>

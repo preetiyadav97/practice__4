@@ -8,9 +8,9 @@ def first(request):
     Coll = {'show': show}
     return render(request,'index.html',Coll)
 
-def update_place(request,pk):
+def update_place(request,num):
     
-    obj = Course_detail.objects.get(id =pk )
+    obj = Course_detail.objects.get(id =num)
     print(obj)
     
     
@@ -50,9 +50,9 @@ def Create_place(request):
         Student = request.POST['Student']
         # print(lname)
  
-        d=Course_detailZ    (Coursename=name, Code=Code, Collage=Collage, Student=Student)
+        d=Course_detail   (Coursename=name, Code=Code, Collage=Collage, Student=Student)
         d.save()
-        return redirect("Create1")
+        return redirect("first1")
 
 
 
@@ -60,14 +60,15 @@ def Create_place(request):
     
     return render(request,'Create.html')
     
-def  Delete_place(request,pk):
+def  Delete_place(request,num):
  
-    obj = Course_detail.objects.get(id = pk )
-    print(obj)
+    obj = Course_detail.objects.get(id = num )
+    if obj:
+        obj.delete()
+        return redirect("first1")
 
     
     
-    obj.delete()
     show=Course_detail.objects.all()
     print(show)
     Coll = {'show': show}
